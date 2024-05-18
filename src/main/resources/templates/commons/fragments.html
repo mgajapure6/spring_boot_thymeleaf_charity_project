@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<!--Header-->
+<head th:fragment="head(title, remove)" th:remove="${remove}">
+    <meta charset="UTF-8">
+    <title>[[${title}]]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="description" content="">
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="56x56" th:href="@{/assets/images/fav-icon/icon.png}">
+	<!-- bootstrap CSS -->
+	<link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}" type="text/css" media="all" />
+	<!-- carousel CSS -->
+	<link rel="stylesheet" th:href="@{/assets/css/owl.carousel.min.css}" type="text/css" media="all" />	
+	<!-- animate CSS -->
+	<link rel="stylesheet" th:href="@{/assets/css/animate.css}" type="text/css" media="all" />	
+	<!-- animated-text CSS -->
+	<link rel="stylesheet" th:href="@{/assets/css/animated-text.css}" type="text/css" media="all" />	
+	<!-- font-awesome CSS -->
+	<link rel="stylesheet" th:href="@{/assets/css/all.min.css}" type="text/css" media="all" />	
+	<!-- font-flaticon CSS -->
+	<link rel="stylesheet" th:href="@{/assets/css/flaticon.css}" type="text/css" media="all" />	
+	<!-- theme-default CSS -->
+	<link rel="stylesheet" th:href="@{/assets/css/theme-default.css}" type="text/css" media="all" />	
+	<!-- meanmenu CSS -->
+	<link rel="stylesheet" th:href="@{/assets/css/meanmenu.min.css}" type="text/css" media="all" />	
+	<!-- Main Style CSS -->
+	<link rel="stylesheet"  th:href="@{/style.css}" type="text/css" media="all" />
+	<!-- transitions CSS -->
+	<link rel="stylesheet" th:href="@{/assets/css/owl.transitions.css}" type="text/css" media="all" />
+	<!-- venobox CSS -->
+	<link rel="stylesheet" th:href="@{/venobox/venobox.css}" type="text/css" media="all" />
+	<!-- responsive CSS -->
+	<link rel="stylesheet" th:href="@{/assets/css/responsive.css}" type="text/css" media="all" />
+	<!-- bootstrap icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<!--Main scripts-->
+<div th:fragment="scripts" xmlns:th="http://www.thymeleaf.org">
+	<!-- modernizr js -->
+	<script th:src="@{/assets/js/vendor/modernizr-3.5.0.min.js}"></script>
+    <!-- jquery js -->	
+	<script th:src="@{/assets/js/vendor/jquery-3.2.1.min.js}"></script>
+	<!-- bootstrap js -->	
+	<script th:src="@{/assets/js/bootstrap.min.js}"></script>
+	<!-- carousel js -->
+	<script th:src="@{/assets/js/owl.carousel.min.js}"></script>
+	<!-- counterup js -->
+	<script th:src="@{/assets/js/jquery.counterup.min.js}"></script>
+	<!-- waypoints js -->
+	<script th:src="@{/assets/js/waypoints.min.js}"></script>
+	<!-- wow js -->
+	<script th:src="@{/assets/js/wow.js}"></script>
+	<!-- imagesloaded js -->
+	<script th:src="@{/assets/js/imagesloaded.pkgd.min.js}"></script>
+	<!-- venobox js -->
+	<script th:src="@{/venobox/venobox.js}"></script>
+	<!-- ajax mail js -->
+	<script th:src="@{/assets/js/ajax-mail.js}"></script>
+	<!--  animated-text js -->	
+	<script th:src="@{/assets/js/animated-text.js}"></script>
+	<!-- venobox min js -->
+	<script th:src="@{/venobox/venobox.min.js}"></script>
+	<!-- isotope js -->
+	<script th:src="@{/assets/js/isotope.pkgd.min.js}"></script>
+	<!-- jquery meanmenu js -->	
+	<script th:src="@{/assets/js/jquery.meanmenu.js}"></script>
+	<!-- jquery scrollup js -->	
+	<script th:src="@{/assets/js/jquery.scrollUp.js}"></script>
+	<!-- barfiller js -->
+	<script th:src="@{/assets/js/jquery.barfiller.js}"></script>
+	<!-- theme js -->	
+	<script th:src="@{/assets/js/theme.js}"></script>
+</div>
+
+<!-- loder -->
+<div th:fragment="page_loader" class="loader-wrapper">
+	<div class="loader"></div>
+	<div class="loder-section left-section"></div>
+	<div class="loder-section right-section"></div>
+</div>
+
+<div th:fragment="top_header" class="header_top_menu">
+	<div class="container-fluid">
+		<div class="row align-items-center">
+			<div class="col-lg-3"></div>
+			<div class="col-lg-5 col-sm-8">
+				<div class="header_top_menu_address">
+					<div class="header_top_menu_text">
+						<p> Welcome! Charina Non-Profit Program 2023 </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-4">
+				<div class="header_top_menu_icon text-right">
+					<div class="menu-text">
+						<p> <i class="bi bi-person-circle"></i> 
+						<a href="#">Login / Register </a> </p>
+					</div>
+					<div class="header_top_menu_icon_inner">
+						<ul>
+							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#"><i class="bi bi-twitter"></i></a></li>
+							<li class="menu-icon"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+							<li class="menu-icon"><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--==================================================-->
+<!-- Start charina Main Menu Area -->
+<!--==================================================-->
+
+<div th:fragment="sticky_header" id="sticky-header" class="charina_nav_manu align-items-center">
+	<div class="container-fluid">
+		<div class="row align-items-center">
+			<div class="col-lg-2">
+				<div class="logo">
+					<a class="logo_img" href="/home" title="charina">
+						<img src="assets/images/logo.png" alt="" />
+					</a>
+					<a class="main_sticky" href="/home" title="charina">
+						<img src="assets/images/logo.png" alt="astute" />
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<nav class="charina_menu">
+					<ul class="nav_scroll">
+						<li><a href="/home">Home </a></li>
+						<li><a href="/volunteer">Volunteer </a></li>
+						<li><a href="/donation">Donations </a></li>
+						<li><a href="/organization">Organizations </a></li>
+						<li><a href="#">Events <span><i class="bi bi-chevron-down"></i></span></a>
+							<ul class="sub-menu">
+								<li><a href="/event">Events</a></li>
+								<li><a href="event-details.html">Event Details</a></li>
+							</ul>
+						</li>
+						<li><a href="/contact-us">Contact</a></li>
+					</ul>		
+				</nav>
+			</div>
+			<div class="col-lg-2">	
+				<div class="header-right-button-box">
+					<div class="header-button2">
+						<a href="#"> <i class="bi bi-telephone"></i> </a>	
+					</div>	
+					<div class="slider-button-title">
+						<p>Call Us Anytime</p>
+						<h6>+98 678 (960) 280</h6>
+					</div>
+				</div>	
+			</div>
+			<div class="col-lg-2 pl-0 ">
+				<div class="search-box-btn search-box-outer">
+					<a href="#"><i class="bi bi-search"></i> </a>
+				</div>
+				<div class="header-button">
+					<a href="/donate"> Donate Now <i class="bi bi-suit-heart"></i> </a>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- charina Mobile Menu Area -->
+<div th:fragment="mobile_menu" class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none ">
+	<div class="mobile-menu">
+		<nav class="charina_menu">
+			<ul class="nav_scroll">
+				<li><a href="/home">Home </a></li>
+				<li><a href="/volunteer">Volunteer </a></li>
+				<li><a href="/donation">Donations </a></li>
+				<li><a href="/organization">Organizations </a></li>
+				<li><a href="#">Events <span><i class="bi bi-chevron-down"></i></span></a>
+					<ul class="sub-menu">
+						<li><a href="/event">Events</a></li>
+						<li><a href="event-details.html">Event Details</a></li>
+					</ul>
+				</li>
+				<li><a href="/contact-us">Contact</a></li>
+			</ul>	
+		</nav>
+	</div>
+</div>
+
+<!--==================================================-->
+<!-- Start charina breadcrum section  -->
+<!--==================================================-->
+<div th:fragment="breadcrum(title, remove)" class="breatcam-section d-flex align-items-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="breatcam-content text-center">
+					<!-- breatcam menu -->
+					<div class="breatcam-menu">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><span>/</span> [[${title}]] </li>
+						</ul>
+					</div>
+					<!-- breadcumb title -->
+					<div class="breatcam-title">
+						<h1>[[${title}]]</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div th:fragment="footer" class="footer-bottom-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6">
+				<div class="footer-bottom-content-copy">
+					<p> Copyright © charina  all rights reserved  </p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6">
+				<div class="footer-bottom-menu text-right">
+					<ul>
+						<li><a href="/about">About</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="service.html">Services</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+</html>
